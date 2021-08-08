@@ -21,15 +21,15 @@
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
 
-Name of feature: ________________________________
+Name of feature: User Authentication with Auth0
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 3hr
 
-Start time: _____
+Start time: 2:00 PM
 
-Finish time: _____
+Finish time: 5:20 PM
 
-Actual time needed to complete: _____
+Actual time needed to complete: 3:20 PM
 
 # Start your own "Can of Books" App
 
