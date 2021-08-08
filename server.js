@@ -6,19 +6,17 @@ const jwt = require('jsonwebtoken');
 const jwksClient = require('jwks-rsa');
 const PORT = process.env.PORT;
 const JWKSURI = process.env.JWKSURI;
-app.use(cors())
+app.use(cors());
 
 const client = jwksClient({
-
-  jwksUri: JWKSURI
+  jwksUri: JWKSURI,
 });
 
 app.get('/', (request, response) => {
   response.send('Hello World 🥳');
 });
 
-app.get('/profile', (request, response) => {
-});
+app.get('/profile', (request, response) => {});
 
 function getKey(header, callback) {
   client.getSigningKey(header.kid, function (err, key) {
@@ -28,9 +26,8 @@ function getKey(header, callback) {
 }
 
 app.get('/verify-token', (request, response) => {
-
   const token = request.headers.authorization.split(' ')[1];
-  console.log(token);
+  // console.log(token);
 
   jwt.verify(token, getKey, {}, (error, user) => {
     if (error) {
@@ -39,6 +36,5 @@ app.get('/verify-token', (request, response) => {
     response.json(user);
   });
 });
-
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
